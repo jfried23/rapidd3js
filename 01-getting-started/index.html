@@ -4,9 +4,11 @@
         <!-- For stand-alone development, download Bootstrap from http://getbootstrap.com/getting-started/
              and install under your web application's root directory then modify the below link as
              appropriate. -->
-        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../bootstrap.min.css">
     </head>
+
     <body>
+
         <div class="container">
             <div>
                 <h3>Hello Rapid D3.js World</h3>
@@ -17,6 +19,18 @@
         <!-- For stand-alone environment, download D3js from http://d3js.org/
              and install under your web application's root directory then modify the below src as
              appropriate. -->
-        <script src="http://d3js.org/d3.v3.min.js"></script>
-    </body>
+        <script src="../d3.v3.min.js"></script>
+
+        <script>
+            var names = ['Josh','Beth','Lisa','Robert'];
+            var myList = d3.select('#content').append('ul');
+
+            myList.selectAll('li')
+                  .data( names )
+                  .enter()
+                  .append( 'li' )
+                  .text( function(s) { return s; } );
+       </script>
+
+  </body>
 </html>
